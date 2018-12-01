@@ -1,5 +1,8 @@
 service: aws-node-alexa-skill
 
+custom:
+  env: ${file(serverless-config/environment.yml)}
+
 frameworkVersion: ">=1.4.0 <2.0.0"
 
 provider:
@@ -8,6 +11,8 @@ provider:
 
 functions:
   movieTitles:
-    handler: handler.movieTitles
+    handler: index.handler
     events:
       - alexaSkill
+        skillId: ${self:custom.SKILL_ID}
+        enabled: true
