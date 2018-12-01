@@ -8,6 +8,9 @@ frameworkVersion: ">=1.4.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs4.3
+  environment:
+    ALEXA_SKILL_ID: ${self:custom.env.ALEXA_SKILL_ID}
+    IMDB_API_KEY: ${self:custom.env.IMDB_API_KEY}
 
 functions:
   movieTitles:
