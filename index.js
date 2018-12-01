@@ -1,9 +1,14 @@
+'use strict';
+
+// Load environment variables from .env
+require('dotenv').load();
+
 const Alexa = require('ask-sdk-core');
 const LaunchRequestHandler = require('./src/handlers/Launch');
 const Skill = require('./src/handlers/Skill');
 
 /* Replace with skill id from Alexa developer console */
-const alexAppId = 'amzn1.ask.skill.e1b177a9-871b-4ff2-8d20-a3cbbdd56c24';
+const alexAppId = process.env.ALEXA_SKILL_ID;
 
 let skill;
 

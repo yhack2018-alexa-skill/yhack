@@ -1,6 +1,6 @@
 const imdb = require('imdb-api');
 
-const IMDB_API_KEY = process.IMDB_API_KEY || '';
+const IMDB_API_KEY = process.env.IMDB_API_KEY || '';
 
 describe('imdb-api test', () => {
     it('Does movie name search', async () => {

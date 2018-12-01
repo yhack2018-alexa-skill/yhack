@@ -2,7 +2,7 @@
 
 const imdb = require('imdb-api');
 
-const IMDB_API_KEY = process.IMDB_API_KEY;
+const IMDB_API_KEY = process.env.IMDB_API_KEY;
 
 module.exports.movieTitles = (event, context, callback) => {
   const searchString = event.request.intent.slots.MovieString.value || 'movie';
