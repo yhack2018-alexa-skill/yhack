@@ -14,31 +14,31 @@ module.exports = {
     },
   
     handle({ requestEnvelope, responseBuilder }) {
-      const searchString = requestEnvelope.request.intent.slots.MovieString.value || 'movie';
-      const results = await imdb.search({name: searchString}, {apiKey: IMDB_API_KEY, timeout: 30000}, 1);
-      console.log(JSON.stringify(results));
-      let movieList = '';
-      for (const result of results.results) {
-         movieList += `${result}, `;
-        }
-      console.log(movieList);  
-      const response = {
-        version: '1.0',
-        response: {
-          outputSpeech: {
-            type: 'PlainText',
-            text: `Your movie list is ${movieList}`,
-          },
-          shouldEndSession: false,
-        },
-      };
+      // const searchString = requestEnvelope.request.intent.slots.MovieString.value || 'movie';
+      // const results = await imdb.search({name: searchString}, {apiKey: IMDB_API_KEY, timeout: 30000}, 1);
+      // console.log(JSON.stringify(results));
+      // let movieList = '';
+      // for (const result of results.results) {
+      //    movieList += `${result}, `;
+      //   }
+      // console.log(movieList);  
+      // const response = {
+      //   version: '1.0',
+      //   response: {
+      //     outputSpeech: {
+      //       type: 'PlainText',
+      //       text: `Your movie list is ${movieList}`,
+      //     },
+      //     shouldEndSession: false,
+      //   },
+      // };
     
-      callback(null, response);
+      // callback(null, response);
 
-      console.log(JSON.parse(response));  
+      // console.log(JSON.parse(response));  
 
       //const slotTask = requestEnvelope.request.intent.slots.TaskName.value;
-      const output = `Yas! Your movie list is: ${movieList}`;      
+      const output = `Yas! Your movie list is: `;      
       return responseBuilder
         .speak(output)
         .reprompt(output)
