@@ -3,7 +3,7 @@
  */
 const imdb = require('imdb-api');
 
-const IMDB_API_KEY = '21ebae64';
+const IMDB_API_KEY = process.env.IMDB_API_KEY;
 
 module.exports = {
     canHandle({ requestEnvelope }) {
