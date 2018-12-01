@@ -1,19 +1,47 @@
 /**
- * Handler for `LaunchRequestHandler` requests
+ * Handler for `AMAZON.PopularMovieHandler` requests
  */
-module.exports = {
-  canHandle({ requestEnvelope }) {
-    const {
-      request: { type, intent },
-    } = requestEnvelope;
-    return type === 'LaunchRequest';
-  },
+const imdb = require('imdb-api');
 
-  handle({ responseBuilder }) {
-    const output = 'Movies! Let\'s get it. You can create a goal, add a step to a goal, add a task to a step, or finish a step or task. You can also ask me about your goal, step, or task.';
-    return responseBuilder
-      .speak(output)
-      .reprompt(output)
-      .getResponse();
-  },
-};
+const IMDB_API_KEY = process.env.IMDB_API_KEY;
+
+module.exports = {
+    canHandle({ requestEnvelope }) {
+      const {
+        request: { type, intent },
+      } = requestEnvelope;
+      return type === 'IntentRequest' && intent.name === 'MovieSearch';
+    },
+  
+    handle({ requestEnvelope, responseBuilder }) {
+      const searchString = requestEnvelope.request.intent.slots.MovieString.value || 'movie';
+      const results = await imdb.search({name: searchString}, {apiKey: IMDB_API_KEY, timeout: 30000}, 1);
+      console.log(JSON.stringify(results));
+      let movieList = '';
+      for (const result of results.results) {
+         movieList += `${result}, `;
+        }
+      console.log(movieList);  
+      const response = {
+        version: '1.0',
+        response: {
+          outputSpeech: {
+            type: 'PlainText',
+            text: `Your movie list is ${movieList}`,
+          },
+          shouldEndSession: false,
+        },
+      };
+    
+      callback(null, response);
+
+      console.log(JSON.parse(response));  
+
+      //const slotTask = requestEnvelope.request.intent.slots.TaskName.value;
+      const output = `Yas! Your movie list is ${movieList}`;      
+      return responseBuilder
+        .speak(output)
+        .reprompt(output)
+        .getResponse();
+    },
+  };
