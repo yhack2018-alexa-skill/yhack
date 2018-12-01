@@ -38,7 +38,7 @@ module.exports = {
       console.log(JSON.parse(response));  
 
       //const slotTask = requestEnvelope.request.intent.slots.TaskName.value;
-      const output = `Yas! Your movie list is ${movieList}`;      
+      const output = `Yas! Your movie list is: ${movieList}`;      
       return responseBuilder
         .speak(output)
         .reprompt(output)
