@@ -10,7 +10,7 @@ module.exports = {
     },
   
     handle({ responseBuilder }) {
-      const output = 'Movies! Let\'s get it. You can create a goal, add a step to a goal, add a task to a step, or finish a step or task. You can also ask me about your goal, step, or task.';
+      const output = 'Movies! Let\'s get it. You can ask about a movie or search for movies';
       return responseBuilder
         .speak(output)
         .reprompt(output)

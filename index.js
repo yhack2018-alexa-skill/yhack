@@ -3,7 +3,7 @@ const LaunchRequestHandler = require('./src/handlers/Launch');
 const Skill = require('./src/handlers/Skill');
 
 /* Replace with skill id from Alexa developer console */
-const alexAppId = 'amzn1.ask.skill.e1b177a9-871b-4ff2-8d20-a3cbbdd56c24';
+const alexAppId = 'amzn1.ask.skill.a63b7eee-40c5-4e0a-9707-5b8248f68483';
 
 let skill;
 

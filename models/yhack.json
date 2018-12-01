@@ -1,0 +1,44 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "movie",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MovieSearch",
+                    "slots": [
+                        {
+                            "name": "movie",
+                            "type": "AMAZON.Movie"
+                        }
+                    ],
+                    "samples": [
+                        "show me all the movies with {movie}",
+                        "tell me about {movie}",
+                        "search {movie}"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
