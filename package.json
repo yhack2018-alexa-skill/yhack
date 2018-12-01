@@ -1,0 +1,16 @@
+{
+  "name": "yhack2018",
+  "version": "1.0.0",
+  "description": "AWS Lambdas for custom Alexa skill.",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "test:e2e:moviedb": "mocha test/e2e/moviedb.spec.js --exit"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "imdb-api": "^4.0.2"
+  }
+}
