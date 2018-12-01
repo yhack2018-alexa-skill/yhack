@@ -33,12 +33,12 @@ module.exports = {
         },
       };
     
-      callback(null, response);
+      // callback(null, response);
 
-      console.log(JSON.parse(response));  
+      // console.log(JSON.parse(response));  
 
       //const slotTask = requestEnvelope.request.intent.slots.TaskName.value;
-      const output = `Yas! Your movie list is: ${movieList}`;      
+      const output = `Yas! Your movie list is: `;      
       return responseBuilder
         .speak(output)
         .reprompt(output)

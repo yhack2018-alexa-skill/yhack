@@ -8,11 +8,9 @@ const LaunchRequestHandler = require('./handlers/Launcher.js');
 const SkillHandler = require('./handlers/Skill');
 const ErrorHandler = require('./handlers/Error');
 
-
 /* Replace with skill id from Alexa developer console */
 const alexAppId = process.env.ALEXA_SKILL_ID;
 
-console.log(process.env)
 let skill;
 
 /**
