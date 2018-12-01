@@ -1,6 +1,8 @@
 const Alexa = require('ask-sdk-core');
-const LaunchRequestHandler = require('./src/handlers/Launch');
-const Skill = require('./src/handlers/Skill');
+const LaunchRequestHandler = require('./handlers/Launcher.js');
+const SkillHandler = require('./handlers/Skill');
+const ErrorHandler = require('./handlers/Error');
+
 
 /* Replace with skill id from Alexa developer console */
 const alexAppId = 'amzn1.ask.skill.a63b7eee-40c5-4e0a-9707-5b8248f68483';
@@ -21,6 +23,7 @@ exports.handler = async (event, context) => {
       .addRequestHandlers(
         /* Add custom handlers above these */
         LaunchRequestHandler,
+        SkillHandler,
       )
       .addErrorHandlers(ErrorHandler)
       .withSkillId(alexAppId)
