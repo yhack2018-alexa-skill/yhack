@@ -14,7 +14,7 @@ module.exports = {
     },
   
     async handle({ requestEnvelope, responseBuilder }) {
-      const searchString = requestEnvelope.request.intent.slots.MovieString.value || 'movie';
+      const searchString = requestEnvelope.request.intent.slots.movie.value || 'titanic';
       const results = await imdb.search({name: searchString}, {apiKey: IMDB_API_KEY, timeout: 30000}, 1);
       console.log(JSON.stringify(results));
       let movieList = '';
@@ -32,13 +32,8 @@ module.exports = {
           shouldEndSession: false,
         },
       };
-    
-      // callback(null, response);
 
-      // console.log(JSON.parse(response));  
-
-      //const slotTask = requestEnvelope.request.intent.slots.TaskName.value;
-      const output = `Yas! Your movie list is: `;      
+      const output = `Yas! Your movie list is: ${movieList}`;      
       return responseBuilder
         .speak(output)
         .reprompt(output)
