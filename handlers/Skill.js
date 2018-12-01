@@ -13,7 +13,7 @@ module.exports = {
       return type === 'IntentRequest' && intent.name === 'MovieSearch';
     },
   
-    handle({ requestEnvelope, responseBuilder }) {
+    async handle({ requestEnvelope, responseBuilder }) {
       const searchString = requestEnvelope.request.intent.slots.MovieString.value || 'movie';
       const results = await imdb.search({name: searchString}, {apiKey: IMDB_API_KEY, timeout: 30000}, 1);
       console.log(JSON.stringify(results));
