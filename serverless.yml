@@ -17,5 +17,3 @@ functions:
     handler: index.handler
     events:
       - alexaSkill
-          # appId: ${self:custom.SKILL_ID}
-          # enabled: true

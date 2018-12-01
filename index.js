@@ -33,6 +33,6 @@ exports.handler = async (event, context) => {
       .withSkillId(alexAppId)
       .create();
   }
-  console.log("incoming event is", event);
+  
   return skill.invoke(event, context);
 };
