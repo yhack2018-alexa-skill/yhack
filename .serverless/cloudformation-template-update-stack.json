@@ -92,7 +92,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-node-alexa-skill/dev/1543693575031-2018-12-01T19:46:15.031Z/aws-node-alexa-skill.zip"
+          "S3Key": "serverless/aws-node-alexa-skill/dev/1543693731018-2018-12-01T19:48:51.018Z/aws-node-alexa-skill.zip"
         },
         "FunctionName": "aws-node-alexa-skill-dev-movieTitles",
         "Handler": "index.handler",
@@ -111,14 +111,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "MovieTitlesLambdaVersionM843FHv6GBPajOmXyuc2z9wC4Sx7PMLVqsyKE1wDBU": {
+    "MovieTitlesLambdaVersiono2gqih5hpkdacB4jUeDkF0CEQHn5asLhemVSojs4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MovieTitlesLambdaFunction"
         },
-        "CodeSha256": "FO6fIYKDzU361q8A+M30HB8Cj9dmIkLL4kktOFIABWk="
+        "CodeSha256": "2kFYyCRaHC4xaqfCJGbeYdt5mtYo/BGCueIOSZCS/pY="
       }
     },
     "MovieTitlesLambdaPermissionAlexaSkill1": {
@@ -144,7 +144,7 @@
     "MovieTitlesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MovieTitlesLambdaVersionM843FHv6GBPajOmXyuc2z9wC4Sx7PMLVqsyKE1wDBU"
+        "Ref": "MovieTitlesLambdaVersiono2gqih5hpkdacB4jUeDkF0CEQHn5asLhemVSojs4"
       }
     }
   }
